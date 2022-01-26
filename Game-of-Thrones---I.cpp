@@ -9,8 +9,11 @@ using namespace std;
  * The function accepts STRING s as parameter.
  */
 
-string gameOfThrones(string s) {
-
+string gameOfThrones(string s)
+{
+    std::string result;
+    
+    return result;
 }
 
 int main()
