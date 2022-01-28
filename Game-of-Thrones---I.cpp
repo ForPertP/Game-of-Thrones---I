@@ -13,11 +13,11 @@ string gameOfThrones(string s)
 {
     std::string result {"YES"};
 
-    std::map<char, int> charCount;
+    std::map<char, int> mp;
     
     for (char c : s)
     {
-        auto ret = charCount.insert({ c, 1 });
+        auto ret = mp.insert({ c, 1 });
         if (!ret.second)
         {
             ret.first->second++;
@@ -25,7 +25,7 @@ string gameOfThrones(string s)
     }
 
     int count = 0;
-    for (const auto &item : charCount)
+    for (const auto &item : mp)
     {
         int x = item.second;
         if ( x % 2 != 0)
