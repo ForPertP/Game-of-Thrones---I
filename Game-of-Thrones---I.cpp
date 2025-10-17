@@ -9,6 +9,23 @@ using namespace std;
  * The function accepts STRING s as parameter.
  */
 
+
+string gameOfThrones(string s)
+{
+    array<int, 26> freq{};
+
+    for (char c : s)
+        freq[c - 'a']++;
+
+    int oddCount = 0;
+    for (int count : freq)
+        if (count % 2 != 0)
+            oddCount++;
+
+    return (oddCount <= 1) ? "YES" : "NO";
+}
+
+
 string gameOfThrones(string s)
 {
     std::string result {"YES"};
