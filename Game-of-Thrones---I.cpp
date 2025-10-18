@@ -25,6 +25,20 @@ string gameOfThrones(string s)
     return (oddCount <= 1) ? "YES" : "NO";
 }
 
+string gameOfThrones(string s)
+{
+    unordered_map<char, int> freq;
+
+    for (char c : s)
+        freq[c]++;
+
+    int oddCount = 0;
+    for (const auto &p : freq)
+        if (p.second % 2 != 0)
+            oddCount++;
+
+    return (oddCount <= 1) ? "YES" : "NO";
+}
 
 string gameOfThrones(string s)
 {
