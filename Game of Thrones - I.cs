@@ -31,3 +31,27 @@ using System;
 
         return (oddCount <= 1) ? "YES" : "NO";
     }
+
+
+
+    public static string gameOfThrones2(string s)
+    {
+        Dictionary<char, int> freq = new Dictionary<char, int>();
+
+        foreach (char c in s)
+        {
+            if (freq.ContainsKey(c))
+                freq[c]++;
+            else
+                freq[c] = 1;
+        }
+
+        int oddCount = 0;
+        foreach (var kvp in freq)
+        {
+            if (kvp.Value % 2 != 0)
+                oddCount++;
+        }
+
+        return (oddCount <= 1) ? "YES" : "NO";
+    }    
