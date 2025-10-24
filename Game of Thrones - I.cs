@@ -12,6 +12,15 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System;
 
+class Result
+{
+
+    /*
+     * Complete the 'gameOfThrones' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts STRING s as parameter.
+     */
 
     public static string gameOfThrones(string s)
     {
@@ -31,7 +40,6 @@ using System;
 
         return (oddCount <= 1) ? "YES" : "NO";
     }
-
 
 
     public static string gameOfThrones2(string s)
@@ -55,3 +63,22 @@ using System;
 
         return (oddCount <= 1) ? "YES" : "NO";
     }    
+}
+
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+        string s = Console.ReadLine();
+
+        string result = Result.gameOfThrones(s);
+
+        textWriter.WriteLine(result);
+
+        textWriter.Flush();
+        textWriter.Close();
+    }
+}
