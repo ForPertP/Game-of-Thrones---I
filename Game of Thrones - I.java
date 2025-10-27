@@ -33,5 +33,22 @@ class Result {
 
         return (oddCount <= 1) ? "YES" : "NO";
     }
-    
+
+
+
+    public static String gameOfThrones2(String s) {
+        Map<Character, Integer> freq = new HashMap<>();
+
+        for (char c : s.toCharArray()) {
+            freq.put(c, freq.getOrDefault(c, 0) + 1);
+        }
+
+        int oddCount = 0;
+        for (int count : freq.values()) {
+            if (count % 2 != 0)
+                oddCount++;
+        }
+
+        return (oddCount <= 1) ? "YES" : "NO";
+    }        
 }
